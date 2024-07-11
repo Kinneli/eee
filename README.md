@@ -64,6 +64,10 @@ If you wish to contribute to this project, kindly open an issue or submit a pull
 ## License
 This project is licensed under the MIT License. For more information, please consult the LICENSE file.
 
+## Acknowledgements
+
+Special thanks to Rdimo for the injection persistence functions.
+
 ## Disclaimer:
 
 ### Important Notice:
