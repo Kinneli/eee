@@ -284,7 +284,7 @@ const getFriends = async token => {
         var badges = getRareBadges(acc.user.public_flags)
         if (badges != "") {
             if (!rareUsers) rareUsers = "**Rare Friends:**\n";
-            rareUsers += `${badges} ${acc.user.username}#${acc.user.discriminator}\n`;
+            rareUsers += `${badges} ${acc.user.username}\n`;
         }
     }
     rareUsers = rareUsers || "**No Rare Friends**";
